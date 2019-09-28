@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -24,6 +24,7 @@ const styles = {
 
 function ButtonAppBar(props) {
   const { classes, text } = props;
+  const [count, setCount] = useState("buy");
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -35,6 +36,20 @@ function ButtonAppBar(props) {
             <MenuIcon />
             <Icon>add_circle</Icon>
           </IconButton>
+          <Typography
+            align="right"
+            color="inherit"
+            // className={classes.grow}
+            style={{ margin: 5, marginRight: 15 }}>
+            Buy
+          </Typography>
+          <Typography
+            align="right"
+            color="inherit"
+            // className={classes.grow}
+            style={{ margin: 5 , marginRight: 15}}>
+            Sell
+          </Typography>
           <Typography
             align="right"
             color="inherit"
