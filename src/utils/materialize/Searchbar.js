@@ -40,7 +40,7 @@ const SearchBar = props => {
         />
         <InputBase
           className={classes.input}
-          placeholder="Search"
+          placeholder="Search your property here"
           inputProps={{ "aria-label": "search" }}
           onChange={props.onChange}
         />

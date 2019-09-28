@@ -8,14 +8,7 @@ import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <BrowserRouter forceRefresh={false}>
-  <Switch>
-      <Route exact path="/">
         <App />
-      </Route>
-      <Route path="/mobile">
-      <MobileMap/>
-      </Route>
-    </Switch>
   </BrowserRouter>,
   document.getElementById("root")
 );

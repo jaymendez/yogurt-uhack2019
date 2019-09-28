@@ -75,7 +75,7 @@ class LandingPage extends Component {
               Real Estate with Analytics
             </Typography>
             <Typography variant="h4" gutterBottom style={{marginTop: "40px", marginLeft: "40px",  color: "#ffffff"}}>
-            "A data driven approach to investment in real estate."
+            "A data driven approach to investment in real estate"
             </Typography>
             
           </Container>

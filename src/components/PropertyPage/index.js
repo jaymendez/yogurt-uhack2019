@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import Map from "../map/map";
 
 
 export default class index extends Component {
     render() {
         return (
-            <div>
+            <Fragment>
                 <Map/>
-            </div>
+                {/* <h1>ASDASD</h1> */}
+            </Fragment>
         )
     }
 }
