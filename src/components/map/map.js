@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { GoogleMap, LoadScript, Polygon, Marker } from "@react-google-maps/api";
+import { GoogleMap, LoadScript, Polygon, Marker, InfoWindow} from "@react-google-maps/api";
 import _ from "lodash";
 
+const gkey = "AIzaSyCyvVSCRq0_gLLXBQvdWFUfQGcQ4Sn9sJk";
 class SimpleMap extends Component {
   static defaultProps = {
     center: {
@@ -25,7 +26,7 @@ class SimpleMap extends Component {
     return (
       <LoadScript
         id="script-loader"
-        googleMapsApiKey="AIzaSyAkWxugoc7HVf8pUvA4SEEyNJVHsqAj6MY"
+        googleMapsApiKey={gkey}
         libraries={["drawing"]}
       >
         <GoogleMap
@@ -38,6 +39,7 @@ class SimpleMap extends Component {
           center={location}
         >
           <Marker position={location} />
+
           <Polygon
             onLoad={polygon => {
               console.log("polygon: ", polygon);
@@ -54,6 +56,20 @@ class SimpleMap extends Component {
               zIndex: 1
             }}
           />
+
+            <InfoWindow
+                onLoad={infoWindow => {
+                  console.log('infoWindow: ', infoWindow)
+                }}
+                position={{
+                  lat: 14.53587,
+                  lng: 120.9902401
+                }}
+              >
+                <div>
+                  <h1>InfoWindow</h1>
+                </div>
+              </InfoWindow>
         </GoogleMap>
       </LoadScript>
     );
