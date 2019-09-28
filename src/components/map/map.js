@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-import {
-  GoogleMap,
-  LoadScript,
-  DrawingManager,
-  Marker
-} from "@react-google-maps/api";
+import { GoogleMap, LoadScript, Polygon, Marker } from "@react-google-maps/api";
+import _ from "lodash";
 
 class SimpleMap extends Component {
   static defaultProps = {
@@ -16,6 +12,16 @@ class SimpleMap extends Component {
   };
 
   render() {
+    let { location, geofence } = this.props;
+    if (_.isEmpty(location) && _.isEmpty(geofence)) {
+      location = { lat: 24.886, lng: -70.268 };
+      geofence = [
+        { lat: 25.774, lng: -80.19 },
+        { lat: 18.466, lng: -66.118 },
+        { lat: 32.321, lng: -64.757 },
+        { lat: 25.774, lng: -80.19 }
+      ];
+    }
     return (
       <LoadScript
         id="script-loader"
@@ -23,28 +29,30 @@ class SimpleMap extends Component {
         libraries={["drawing"]}
       >
         <GoogleMap
-          id="drawing-manager-example"
+          id="marker-example"
           mapContainerStyle={{
             height: "400px",
             width: "800px"
           }}
-          zoom={17}
-          center={{
-            lat: 14.53587,
-            lng: 120.9902401
-          }}
+          zoom={5}
+          center={location}
         >
-          <Marker
-            position={{
-              lat: 14.53587,
-              lng: 120.9902401
+          <Marker position={location} />
+          <Polygon
+            onLoad={polygon => {
+              console.log("polygon: ", polygon);
             }}
-          />
-          <DrawingManager
-            onLoad={drawingManager => {
-              console.log(drawingManager);
+            paths={geofence}
+            options={{
+              strokeColor: "red",
+              strokeOpacity: 1,
+              strokeWeight: 1,
+              clickable: false,
+              draggable: false,
+              editable: false,
+              geodesic: false,
+              zIndex: 1
             }}
-            onPolygonComplete={polygon => console.log({ polygon })}
           />
         </GoogleMap>
       </LoadScript>
