@@ -77,7 +77,6 @@ class LandingPage extends Component {
             <Typography variant="h4" gutterBottom style={{marginTop: "40px", marginLeft: "40px",  color: "#ffffff"}}>
             "A data driven approach to investment in real estate"
             </Typography>
-            
           </Container>
         </div>
         {/* <img src={Makati} style={{ opacity: 0.8}}></img>  */}

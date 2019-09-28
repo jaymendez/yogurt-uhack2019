@@ -58,9 +58,8 @@ const NavBar = props => {
 
   const searchBar = <SearchBar onChange={props.searchBar} />;
   return (
-    <div className={classes.root}>
+    <div className={classes.root} style={{marginBottom: "60px"}}>
     <StickyHeader header={
-
       <AppBar position="static">
         <Toolbar>
           <Grid container>
