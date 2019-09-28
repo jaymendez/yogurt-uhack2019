@@ -14,6 +14,7 @@ const App = () => {
             <TopAppBar text="Unionbank" exact path="/" />
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/property" component={PropertyPage} />
+            
           </div>
         </Switch>
     </React.Fragment>

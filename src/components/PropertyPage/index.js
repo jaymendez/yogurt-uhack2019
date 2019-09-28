@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Map from "./components/map/map";
+import Map from "../map/map";
 
 
 export default class index extends Component {
