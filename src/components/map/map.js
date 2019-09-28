@@ -56,20 +56,6 @@ class SimpleMap extends Component {
               zIndex: 1
             }}
           />
-
-            <InfoWindow
-                onLoad={infoWindow => {
-                  console.log('infoWindow: ', infoWindow)
-                }}
-                position={{
-                  lat: 14.53587,
-                  lng: 120.9902401
-                }}
-              >
-                <div>
-                  <h1>InfoWindow</h1>
-                </div>
-              </InfoWindow>
         </GoogleMap>
       </LoadScript>
     );
