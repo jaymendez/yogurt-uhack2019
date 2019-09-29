@@ -217,7 +217,7 @@ class LandingPage extends Component {
     ]
 
   };
-
+  
   render() {
     const { classes } = this.props;
     return (
@@ -258,6 +258,7 @@ class LandingPage extends Component {
                         state: {
                           // attributes: this.state.attributes,
                           // project_id: this.state.project_id
+                          data: data
                         }
                       }}
                       style={{ textDecoration: "none" }}

@@ -8,6 +8,7 @@ import {
 } from "@react-google-maps/api";
 import _ from "lodash";
 
+
 const gkey = "AIzaSyCyvVSCRq0_gLLXBQvdWFUfQGcQ4Sn9sJk";
 class SimpleMap extends Component {
   static defaultProps = {
@@ -19,7 +20,8 @@ class SimpleMap extends Component {
   };
 
   render() {
-    let { location, geofence } = this.props;
+    
+    let { location, geofence, floodmaps } = this.props;
     if (_.isEmpty(location) && _.isEmpty(geofence)) {
       location = { lat: 24.886, lng: -70.268 };
       geofence = [
