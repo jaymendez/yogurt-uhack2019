@@ -10,13 +10,16 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: 345,
+    maxWidth: 440,
+    // maxHeight: 500,
   },
 });
 
-export default function ImgMediaCard() {
+export default function ImgMediaCard(props) {
   const classes = useStyles();
-
+  console.log(props);
+  const property = props.data;
+  const img = require(`../../img/${property.main_image}`);
   return (
     <Card className={classes.card}>
       <CardActionArea>
@@ -24,16 +27,23 @@ export default function ImgMediaCard() {
           component="img"
           alt="Contemplative Reptile"
           height="140"
-          image="https://lorempixel.com/640/480/?26399"
+          image={img}
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+          <Typography gutterBottom variant="h5" component="h2" style={{fontSize: "2vh"}}>
+            {property.title}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+          <Typography variant="body2" color="textSecondary" component="p" noWrap>
+            {/* Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except Antarctica */}
+            {property.description}
+          </Typography>
+          <Typography variant="h6" color="textSecondary" component="p" noWrap>
+            P {property.price}
+          </Typography>
+          <Typography variant="overline" color="textSecondary" component="p" noWrap>
+            {property.city}
           </Typography>
         </CardContent>
       </CardActionArea>
